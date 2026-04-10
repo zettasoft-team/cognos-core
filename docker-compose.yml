@@ -1,0 +1,11 @@
+services:
+  cognosfm-core:
+    build: .
+    container_name: cognosfm-core
+    ports:
+      - "8087:8087"
+    env_file:
+      - .env
+    volumes:
+      - ./storage:/app/storage
+    restart: unless-stopped
